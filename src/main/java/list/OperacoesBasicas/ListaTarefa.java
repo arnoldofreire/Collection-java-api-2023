@@ -1,13 +1,9 @@
 package main.java.list.OperacoesBasicas;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 public class ListaTarefa {
-    // Atributo
+    /* Atributo */
     private List<Tarefa> tarefaList;
 
     // Construtor
@@ -85,7 +81,7 @@ class Tarefa {
         return descricao;
     }
 
-    @OverrideSHA256:bGfAhMlwKmKIERCdQWxX1+qk85Es7e4eiKSE5onVrs8
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
