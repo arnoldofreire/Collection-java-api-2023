@@ -45,9 +45,16 @@ public class ListaTarefa {
 
     // Método para remover tarefas duplicadas
     public void removerTarefasDuplicadas() {
-        Set<Tarefa> tarefaSet = new HashSet<>(tarefaList);
-        tarefaList.clear();
-        tarefaList.addAll(tarefaSet);
+        Set<String> descricaoSet = new HashSet<>();
+        List<Tarefa> tarefasUnicas = new ArrayList<>();
+
+        for (Tarefa t : tarefaList) {
+            if (descricaoSet.add(t.getDescricao())) {
+                tarefasUnicas.add(t);
+            }
+        }
+
+        tarefaList = tarefasUnicas;
     }
 
     public static void main(String[] args) {
@@ -56,13 +63,12 @@ public class ListaTarefa {
         lista.adicionarTarefa("Tarefa1");
         lista.adicionarTarefa("Tarefa2");
 
-        System.out.println("Lista antes de remover duplicatas:");
+        System.out.println("Tarefas antes de remover duplicadas:");
         lista.obterDescricoesTarefas();
         System.out.println("Total de tarefas: " + lista.obterNumeroTotalTarefas());
 
         lista.removerTarefasDuplicadas();
-
-        System.out.println("Lista após remover duplicatas:");
+        System.out.println("Tarefas depois de remover duplicadas:");
         lista.obterDescricoesTarefas();
         System.out.println("Total de tarefas: " + lista.obterNumeroTotalTarefas());
     }
