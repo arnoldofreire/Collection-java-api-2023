@@ -85,7 +85,7 @@ class Tarefa {
         return descricao;
     }
 
-    @Override
+    @OverrideSHA256:bGfAhMlwKmKIERCdQWxX1+qk85Es7e4eiKSE5onVrs8
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
