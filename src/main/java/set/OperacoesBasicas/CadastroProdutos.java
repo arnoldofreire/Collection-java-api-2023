@@ -4,9 +4,8 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
-class CadastroProdutos {
+public class CadastroProdutos {
 
-    private static String[] args;
     private final Set<Produto> produtoSet;
 
     public CadastroProdutos() {
@@ -28,7 +27,6 @@ class CadastroProdutos {
     }
 
     public static void main(String[] args) {
-        CadastroProdutos.args = args;
         CadastroProdutos cadastroProdutos = new CadastroProdutos();
 
         cadastroProdutos.adicionarProduto(1L, "Produto 5", 15.0, 5);
@@ -36,9 +34,10 @@ class CadastroProdutos {
         cadastroProdutos.adicionarProduto(3L, "Produto 3", 10.0, 2);
         cadastroProdutos.adicionarProduto(9L, "Produto 9", 15.0, 2);
 
-       // System.out.println(cadastroProdutos.exibirProdutoPorNome());
+        System.out.println("Produtos ordenados por nome:");
+        System.out.println(cadastroProdutos.exibirProdutoPorNome());
+
+        System.out.println("Produtos ordenados por preço:");
         System.out.println(cadastroProdutos.exibirProdutoPorPreco());
-
-
     }
 }
